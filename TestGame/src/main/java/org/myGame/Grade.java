@@ -2,7 +2,7 @@ package org.myGame;
 
 public class Grade
 {
-    private float mod1, mod2, mod3;
+    public float mod1, mod2, mod3;
 
     public void setGrade(float mod1, float mod2, float mod3) {
         this.mod1 = mod1;
@@ -15,19 +15,8 @@ public class Grade
         return (mod1 + mod2 + mod3) / 3;
     }
 
-
     public String getUniGrade()
     {
-        String a = "Passed! ";
-        if (a == "Passed! ")
-        {
-            System.out.print("Passed - ");
-        }
-        else
-        {
-            System.out.print("Failed! ");
-        }
-
 
         if (Average() < 29.99)
         {
@@ -81,7 +70,6 @@ public class Grade
         {
             System.out.println("Passed! ");
         }
-        return a;
+        return "Done! ";
     }
-
 }
