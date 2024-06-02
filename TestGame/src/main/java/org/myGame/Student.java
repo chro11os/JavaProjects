@@ -19,14 +19,7 @@ public class Student
         StudentGrade = scanner.nextFloat();
         scanner.nextLine();
 
-        if (getUniGrade())
-        {
-
-        }
-
-
-
-        return null;
+        return "done";
     }
 
 }
