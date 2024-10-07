@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity entity = new ProductEntity((String) product.getName(), (Double) product.getPrice());
         return mapToModel(productRepository.save(entity));
     }
-
+    
     private Product mapToModel(ProductEntity entity) {
         return new Product(entity.getId(), entity.getName(), entity.getPrice());
     }
