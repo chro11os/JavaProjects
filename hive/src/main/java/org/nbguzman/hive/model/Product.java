@@ -4,6 +4,7 @@ public class Product {
     private Long id;
     private String name;
     private double price;
+    private String description;
 
     public Product(Object id, Object name, Object price) {
     }
