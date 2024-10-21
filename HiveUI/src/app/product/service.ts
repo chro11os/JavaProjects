@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from './product.model';  // Create a model based on your Product entity
+import { Product } from './model';  // Create a model based on your Product entity
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:8080/api/products';  // Spring Boot API base URL
+  private apiUrl = 'http://localhost:3306/api/products';  // Spring Boot API base URL
 
   constructor(private http: HttpClient) {}
 
