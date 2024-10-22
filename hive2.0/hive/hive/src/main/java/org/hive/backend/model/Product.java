@@ -1,11 +1,13 @@
 package org.hive.backend.model;
 
+import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Id;  // Importing from jakarta
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
+
 
 public class Product {
     @Id  // Make sure this is @Id, not id
