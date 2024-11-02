@@ -8,7 +8,7 @@ class FullStackWebAppApplicationTests {
 
     @Test
     void contextLoads() {
-        
+
     }
 
 }
