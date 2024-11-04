@@ -4,6 +4,7 @@ import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.UserRepository;
+import util.PasswordEncoderUtil;
 
 import java.util.Optional;
 
@@ -24,4 +25,9 @@ public class UserService {
             return userRepository.findByEmail(email);
         }
 
+        public User reisterUser (User user) {
+            user.setPassword(PasswordEncoderUtil.encodePassword(user.getPassword()));
+            return userRepository.save(user);
+        }
 }
+
