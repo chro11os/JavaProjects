@@ -1,5 +1,6 @@
 package controller;
 
+import DTOs.UserDTO;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,14 +19,15 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
-        if (userService.findUserByEmail(user.getEmail()).isPresent()) {
+    public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
+        // Check if the email is already registered
+        if (userService.findUserByEmail(userDTO.getEmail()).isPresent()) {
             return new ResponseEntity<>("Email already registered", HttpStatus.BAD_REQUEST);
         }
 
-        userService.registerUser(user);
+        // Register the new user using the updated service method
+        userService.registerUser(userDTO);
         return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
-
-
     }
+
 }
