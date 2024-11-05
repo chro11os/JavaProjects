@@ -1,0 +1,34 @@
+<div class="auth-container">
+  <!-- Logo -->
+  <img src="hiveLogo.png" alt="Logo" class="logo" />
+
+
+  <!-- Tab Buttons -->
+  <div class="tabs">
+    <button [class.active]="activeTab === 'login'" (click)="setActiveTab('login')">Log In</button>
+    <button [class.active]="activeTab === 'signup'" (click)="setActiveTab('signup')">Sign Up</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+    <!-- Login Form -->
+    <div *ngIf="activeTab === 'login'" class="form-container">
+      <form (ngSubmit)="onLogin()">
+        <input type="email" placeholder="Email" [(ngModel)]="loginEmail" name="loginEmail" required>
+        <input type="password" placeholder="Password" [(ngModel)]="loginPassword" name="loginPassword" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Sign-Up Form -->
+    <div *ngIf="activeTab === 'signup'" class="form-container">
+      <form (ngSubmit)="onSignUp()">
+        <input type="email" placeholder="Email" [(ngModel)]="signupEmail" name="signupEmail" required>
+        <input type="text" placeholder="Username" [(ngModel)]="signupUsername" name="signupUsername" required>
+        <input type="password" placeholder="Password" [(ngModel)]="signupPassword" name="signupPassword" required>
+        <input type="password" placeholder="Password" [(ngModel)]="retypePassword" name="retypePassword" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>
