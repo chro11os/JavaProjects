@@ -1,0 +1,33 @@
+<div class="cart-container">
+  <h2>Your Cart</h2>
+
+  <!-- Check if there are any items in the cart -->
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <!-- Loop through cart items -->
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <input type="checkbox" [(ngModel)]="item.selected" (change)="toggleItemSelection(item)" />
+      <img [src]="item.imageUrl" alt="{{ item.name }}" class="item-image" />
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>Price: {{ item.price | currency }}</p>
+        <label>
+          Quantity:
+          <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item, item.quantity)" min="1" />
+        </label>
+      </div>
+      <button (click)="removeItem(item)">Remove</button>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="cart-summary">
+      <h3>Total Price: {{ totalPrice | currency }}</h3>
+      <button (click)="placeOrder()">Place Order</button>
+    </div>
+  </div>
+
+  <!-- Template for empty cart -->
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+</div>

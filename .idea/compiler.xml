@@ -9,5 +9,13 @@
         <module name="TestGame" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="22">
+      <module name="fullstackwebapp" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="fullstackwebapp" options="-parameters" />
+    </option>
   </component>
 </project>

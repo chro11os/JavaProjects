@@ -1,0 +1,15 @@
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">Hive Shop</a>
+    <ul class="nav-links">
+      <li><a (click)="navigateToProducts()">Products</a></li> <!-- Using click event for Products -->
+      <li><a (click)="navigateToCart()">Cart</a></li> <!-- Using click event for Cart -->
+      <li><a (click)="navigateToAuth()">Sign In / Register</a></li> <!-- Using click event for Auth -->
+    </ul>
+  </div>
+</nav>
+<!-- Router Outlet for Dynamic Content -->
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
